@@ -1,0 +1,60 @@
+{% load static %}
+
+<div class="sidebar" style="background:url({% static 'funo/img/bg-01.jpg' %});">
+    <!--
+Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+Tip 2: you can also add an image using data-image tag
+-->
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a href="/" class="simple-text">
+                <img src="{% static 'funo/img/white_logo.png' %}" style="width:90px;">
+        </div>
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'function' %}">
+                <i class="nc-icon nc-tv-2"></i>
+                  <p>Home</p>
+              </a>
+          </li>
+          <li>
+              <a class="nav-link" href="{% url 'dashboard' %}">
+                  <i class="nc-icon nc-chart-bar-32"></i>
+                  <p>Forecast</p>
+              </a>
+          </li>
+            <li>
+                <a class="nav-link" href="{% url 'user' %}">
+                    <i class="nc-icon nc-circle-09"></i>
+                    <p>User Profile</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="{% url 'support' %}">
+                    <i class="nc-icon nc-atom"></i>
+                    <p>Support</p>
+                </a>
+            </li>
+        
+            <li>
+                <a class="nav-link" href="{% url 'aboutus' %}">
+                    <i class="nc-icon nc-grid-45"></i>
+                    <p>About Us</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="{% url 'usermanual' %}">
+                    <i class="nc-icon nc-bulb-63"></i>
+                    <p>User Manual</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="{%url 'subs'%}">
+                    <i class="nc-icon nc-email-85"></i>
+                    <p>Subscription</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

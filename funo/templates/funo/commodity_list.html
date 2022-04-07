@@ -1,0 +1,306 @@
+{% extends 'funo/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    {% include 'funo/graph.html'%}
+  
+    <div class="wrapper">
+       
+        <div class="sidebar" style="background:url({% static 'funo/img/bg-01.jpg' %});">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+        
+        Tip 2: you can also add an image using data-image tag
+        -->
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="/" class="simple-text">
+                        <img src="{% static 'funo/img/white_logo.png' %}" style="width:90px;">
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'function' %}">
+                            <i class="nc-icon nc-tv-2"></i>
+                            <p>Home</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'dashboard' %}">
+                            <i class="nc-icon nc-chart-bar-32"></i>
+                            <p>Forecast</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'user' %}">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'aboutus' %}">
+                            <i class="nc-icon nc-grid-45"></i>
+                            <p>About Us</p>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a class="nav-link" href="{% url 'support' %}">
+                            <i class="nc-icon nc-atom"></i>
+                            <p>Support</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'usermanual' %}">
+                            <i class="nc-icon nc-bulb-63"></i>
+                            <p>User Manual</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{%url 'subs'%}">
+                            <i class="nc-icon nc-email-85"></i>
+                            <p>Subscription</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+       
+        <div class="main-panel">
+
+         {% include 'funo/navbar.html' with page=page %}
+
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="aboutbanner" style="background:url('/static/funo/img/hope3.png'); background-position: 0.005cm;  background-size:100%;">
+                            <h1 style="color:white; text-shadow: 5px 5px 6px #000000; text-align:center;">Slide into the New Era of Modern Agriculture with Tailor-made Solutions</h4>
+                            <b><i><h5 style="color:white; font-weight:400; text-shadow: 3px 3px 6px #000000; text-align: center;">Discover the world of accurracy commodities prediction and trust our industry-focused solution.
+                            </h4></i></b>
+                        </div>
+            
+            <div class="content">
+            
+            </br>
+            
+            
+
+<!--Nav--> <div class="container-fluid">
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-link active">
+                      <a class="nav" href="{% url 'function' %}">Overview </a>
+                    </li>
+                    <li class="nav-link ">
+                      <a class="nav" data-toggle="modal" data-target="#exampleModal">Explore Commodity<img src="https://img.icons8.com/material/20/000000/barley.png"/></a>
+                      </li>
+                      <li class="nav-link">
+                        <a class="nav" href="{% url 'news' %}">News <img src="https://img.icons8.com/windows/20/000000/rss.png"/></a></a>
+                      </li>
+                      
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Agriculture Directory<img src="https://img.icons8.com/windows/20/000000/address-book-2.png"/></a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{%url 'farmer' %}">Farmers Directory </a> 
+                        <a class="dropdown-item" href="{%url 'supplier' %}">Suppliers Directory </a>
+                        
+                        </div>
+                        </li>
+                        </li>
+                     
+                  </span>
+                </ul>
+                  
+  </div>
+  <!--news--> 
+<div class="box card" style="margin: 20px;">
+    <div class="container">
+     	<div class="row">
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part text-center">
+                        
+                        <div class="btn-info" style="background-color: #fff;"><i class="fa fas fa-child fa-3x" aria-hidden="true"></i></div>
+                        
+						<div class="title">
+							<h4>Farmers</h4>
+						</div>
+                        
+						<div class="text">
+							<span>For farmers looking to streamline their farm management practices, escape from spreadsheets and implement data-driven decision making.</span>
+						</div>
+                        
+                        
+					 </div>
+				</div>	 
+				
+				 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part text-center">
+					    
+                        <div class="btn-info" style="background-color: #fff;"><i class="fa fas fa-users fa-3x" aria-hidden="true"></i></div>
+                    
+						<div class="title">
+							<h4>Cooperatives</h4>
+						</div>
+                        
+						<div class="text">
+							<span>For agricultural cooperatives that want to ensure operational excellence and the health of their farmer network. Integrated communication with all farmers and central management of all cooperatives.</span>
+						</div>
+                        
+                    
+                        
+					 </div>
+				</div>	 
+				
+				 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part text-center">
+                        
+                        <div class="btn-info" style="background-color: #fff;"><i class="fa fa fa-bank fa-3x" aria-hidden="true"></i></div>
+                        
+						<div class="title">
+							<h4>Government</h4>
+						</div>
+                        
+						<div class="text">
+							<span>Government and NGOs are putting a lot of effort into ensuring food security in developing countries. APF empowers them with a central platform for managing farmer networks that focus on key areas for boosting farming productivity.</span>
+						</div>
+                        
+         
+                        
+					 </div>
+				</div>	 
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part text-center">
+                        
+                        <div class="btn-info" style="background-color: #fff;"><i class="fa fas fa-archive fa-3x" aria-hidden="true"></i></div>
+						<div class="title">
+							<h4>Input Supplier</h4>
+						</div>
+                        
+						<div class="text">
+							<span>Intended for selected partner companies that already work with many farmers on a daily basis, and wish to expand their product portfolio with an innovative value-adding product.</span>
+						</div>
+                        
+						
+                        
+					 </div>
+				</div>	 
+				
+				 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part text-center">
+					    
+					    <div class="btn-info" style="background-color: #fff;"><i class="fa fa fa-handshake-o fa-3x" aria-hidden="true"></i></div>
+                    
+						<div class="title">
+							<h4>Agronomy Services</h4>
+						</div>
+                        
+						<div class="text">
+							<span>Various agronomy service providers and consultants who seek additional help with advising their farmers and that want to have support for all farm management activities in real time.</span>
+						</div>
+                        
+				
+                        
+					 </div>
+				</div>	 
+				
+				 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part text-center">
+                        
+                        <div class="btn-info" style="background-color: #fff;"><i class="fa fas fa-user-secret fa-3x" aria-hidden="true"></i></div>
+                        
+						<div class="title">
+							<h4>Privacy Policy</h4>
+						</div>
+                        
+						<div class="text">
+							<span>User will not and will not assist or permit any third party to, pass information to APF that APF could use or recognize as personally identifiable information. You will have and abide by an appropriate Privacy Policy and will comply with all applicable laws, policies, and regulations relating to the collection of information from users. </span>
+						</div>
+                        
+                    
+                        
+			
+				</div>
+            </div>
+	
+
+         <!--modal commodity-->
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document" style="max-width: 600px;">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><b>Select commodity:</b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <!---start-->
+                        <div class="row">
+                        {% for comm in object_list %}
+                          <div class="col-md-4">
+                            <div class="card">
+                              <div class="card-content row valign-wrapper">
+                                <a href="{{ comm.get_absolute_url }}" style="border: #fff;"><button type="submit"style="border: seagreen;">
+                                <div class="col">
+                                <img src="{{ comm.icon.url }}"><span class="card-title" >{{ comm.name }}</span>
+                            
+                                 <div class="col">
+                                <span class="card-title" value="commodity"></span>
+                              </div>
+                              </div>
+                           </div>
+                
+                          </div>
+                        </button></a>
+                      
+                    
+                       
+                         </div>
+                         {% endfor %}
+                         <div class="col-md-12">
+                            <a href="{%url 'subs'%}"><button type="submit" class="btn btn-info btn-fill btn-block" style="margin-bottom: 0em;">Go premium to unlock more commodities!</button></a>
+                        </div>
+                         </div>
+                         </div>
+                     </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+    
+       </div>
+
+</div>
+</div>
+</div>
+                  
+                
+                
+          
+
+
+
+
+                
+               {% include 'funo/chatbox.html' %}
+                {% include 'funo/footer.html' %}
+
+            </div>
+
+        </div>
+
+{% endblock %}
+    
+               

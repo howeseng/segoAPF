@@ -1,0 +1,456 @@
+{% extends 'funo/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="wrapper">
+       
+     <div class="sidebar" style="background:url({% static 'funo/img/bg-01.jpg' %});">
+          <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+      
+      Tip 2: you can also add an image using data-image tag
+      -->
+          <div class="sidebar-wrapper">
+              <div class="logo">
+                  <a href="/" class="simple-text">
+                      <img src="{% static 'funo/img/white_logo.png' %}" style="width:90px;">
+                  </a>
+              </div>
+           
+               <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'function' %}">
+                         <i class="nc-icon nc-tv-2"></i>
+                          <p>Home</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="nav-link" href="{% url 'dashboard' %}">
+                          <i class="nc-icon nc-chart-bar-32"></i>
+                          <p>Forecast</p>
+                      </a>
+                  </li>
+                               <li>
+                    <a class="nav-link" href="{% url 'user' %}">
+                        <i class="nc-icon nc-circle-09"></i>
+                        <p>User Profile</p>
+                    </a>
+                </li>
+               <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'aboutus' %}">
+                        <i class="nc-icon nc-grid-45"></i>
+                        <p>About Us</p>
+                    </a>
+                </li>
+                  
+                  <li>
+                    <a class="nav-link" href="{% url 'support' %}">
+                        <i class="nc-icon nc-atom"></i>
+                        <p>Support</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{% url 'usermanual' %}">
+                        <i class="nc-icon nc-bulb-63"></i>
+                        <p>User Manual</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{%url 'subs'%}">
+                        <i class="nc-icon nc-email-85"></i>
+                        <p>Subscription</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+       
+        <div class="main-panel">
+            
+            {% include 'funo/navbar.html' %}
+
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="aboutbanner" style="background:url('/static/funo/img/aboutbanner.jpeg');  background-size:100%; background-repeat:no-repeat;">
+                            <h1 style="color:white; text-shadow: 5px 5px 6px #000000;">The Future is Now.</h4>
+                            <b><i><h4 style="color:white; font-weight:400; text-shadow: 3px 3px 6px #000000;">Predict future agriculture prices.
+                            </h4></i></b>
+                            <a href="{% url 'dashboard' %}"><button type="submit" class="btn btn-info btn-fill">Forecast Now</button></a>
+                        </div>
+                        <div class="card-body">
+                             <div class="row" style="padding:20px;">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <div class="section-title">
+                                   <h2>Turn Farmer into Traders</h2>
+                              </div>
+                         </br>
+                              <p>APF is generally defined as systematic agriculture for the purpose of expanding farmers’ profits
+                                by utilizing machine learning technique to analyze collected data with regards to weather, soil, growth of crops, etc. 
+                                To accelerate the impact, we work with farmers in Malaysia, agricultural cooperatives, food processing companies, NGOs, governments and other stakeholders interested in improving agricultural production on a farmer’s level.</p>
+                         </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info skill-thumb">
+                              <p><strong><b>Accuracy of Forecasting and Market Trends Analysis</b></strong></p>
+
+                              <strong>Forecasting agri prices</strong>
+                                   <span class="pull-right">100%</span>
+                                        <div class="progress">
+                                             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                                        </div>
+
+                              <strong>Market prices</strong>
+                                   <span class="pull-right">95%</span>
+                                        <div class="progress">
+                                             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
+                                        </div>
+
+                              <strong>Trending Crops</strong>
+                                   <span class="pull-right">90%</span>
+                                        <div class="progress">
+                                             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
+                                        </div>
+
+                              <strong>Weather Forecasting</strong>
+                                   <span class="pull-right">90%</span>
+                                        <div class="progress">
+                                             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                        </div>
+
+                         </div>
+                    </div>
+                    
+               </div>
+
+               <section id="blog" data-stellar-background-ratio="0.5">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title">
+                              <h2>Problems affected the agriculture prices</h2>
+                         
+                         </div>
+                    </div>
+
+
+                    <div class="col-md-12 col-sm-12">
+                         <!-- BLOG THUMB -->
+                         <div class="media blog-thumb">
+                              <div class="media-object media-left">
+                                   <a href="https://www.channelnewsasia.com/news/asia/malaysia-covid-19-vegetables-supply-movement-control-order-12579348"><img src="{% static 'funo/img/grocery.jpg' %}" class="img-responsive" alt=""></a>
+                              </div>
+                              <div class="media-body blog-info">
+                                   <small><i class="fa fa-clock-o"></i> March 27, 2020</small>
+                                   <h3><a href="https://www.mprnews.org/story/2019/10/17/the-stress-is-unbearable-at-times-farmers-wait-hope-as-weather-delays-harvest">Supply Shortage.</a></h3>
+                                   <p>Malaysia's vegetable supply to be disrupted in coming months due to movement control order, say farmers.</p>
+                                   <a href="https://www.channelnewsasia.com/news/asia/malaysia-covid-19-vegetables-supply-movement-control-order-12579348" class="btn btn-info btn-fill pull-left">Read article</a>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12">
+                         <!-- BLOG THUMB -->
+                         <div class="media blog-thumb">
+                              <div class="media-object media-left">
+                                   <a href="https://sintoknews.com/extreme-hot-weather-affected-the-agriculture/"><img  src="{% static 'funo/img/predictions.jpg' %}" class="img-responsive" alt=""></a>
+                              </div>
+                              <div class="media-body blog-info">
+                                   <small><i class="fa fa-clock-o"></i> May 9, 2019</small>
+                                   <h3><a href="https://sintoknews.com/extreme-hot-weather-affected-the-agriculture/">Extreme Hot Weather Affected the Agriculture</a></h3>
+                                   <p>Why production of agriculture sector in Malaysia are getting decreases? It is affected by the extreme hot weather this few months in Malaysia? Or is this just a freak few days?</p>
+                                   <a href="https://sintoknews.com/extreme-hot-weather-affected-the-agriculture/" class="btn btn-info btn-fill pull-left">Read article</a>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                         <!-- BLOG THUMB -->
+                         <div class="media blog-thumb">
+                              <div class="media-object media-left">
+                                   <a href="https://www.nst.com.my/opinion/letters/2019/02/463378/reasons-price-fluctuations"><img src="{% static 'funo/img/palmoil.jpg' %}" class="img-responsive" alt=""></a>
+                              </div>
+                              <div class="media-body blog-info">
+                                   <small><i class="fa fa-clock-o"></i> February 24, 2019</small>
+                                   <h3><a href="https://www.nst.com.my/opinion/letters/2019/02/463378/reasons-price-fluctuations">Reasons for price fluctuations</a></h3>
+                                   <p>The price trends of palm oil affecting local growers are influenced by demand and supply, and other technical factors.</p>
+                                   <a href="https://www.nst.com.my/opinion/letters/2019/02/463378/reasons-price-fluctuations" class="btn btn-info btn-fill pull-left">Read article</a>
+                              </div>
+                         </div>
+                    </div>
+
+                
+                    <section id="team" class="pb-5">
+                         <div class="container">
+                             <h5 class="section-title h3">Meet Our Team</h5>
+                             <div class="row">
+                                 <!-- Team member -->
+                                 <div class="col-xs-12 col-sm-6 col-md-4">
+                                     <div class="image-flip" >
+                                         <div class="mainflip flip-0">
+                                             <div class="frontside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center">
+                                                         <p><img class=" img-fluid" img src="{% static 'funo/img/faces/kailing.jpg' %}" alt="card image"></p>
+                                                         <h4 class="card-title">Sin Kai Ling</h4>
+                                                         <p class="card-text">CEO/Director/Programmer</p>
+                                                         
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             <div class="backside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center mt-4">
+                                                         
+                                                         <p class="card-text">Being a founder of APF, I believe that <b>"Some people dream of success, while other get up every morning and make it happen."</b></p>
+                                                         <ul class="list-inline">
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com/sin.kailing">
+                                                                     <i class="fa fa-facebook"></i>
+                                                                 </a>
+                                                             </li>
+                                                            
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                                     <i class="fa fa-google"></i>
+                                                                 </a>
+                                                             </li>
+                                                         </ul>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <!-- ./Team member -->
+                                 <!-- Team member -->
+                                 <div class="col-xs-12 col-sm-6 col-md-4">
+                                     <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                         <div class="mainflip">
+                                             <div class="frontside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center">
+                                                         <p><img class=" img-fluid" img src="{% static 'funo/img/faces/howeseing.jpg' %}" alt="card image"></p>
+                                                         <h4 class="card-title">Goh Howe Seng</h4>
+                                                         <p class="card-text">Project Manager/Programmer</p>
+                                                         
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             <div class="backside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center mt-4">
+                                                         <p class="card-text">
+                                                            <b>“Always follow your dreams, no matter how hard it is, because if we put our heart and effort into it, nothing is impossible!”</b></p>
+                                                         <ul class="list-inline">
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com/gohhoweseng">
+                                                                     <i class="fa fa-facebook"></i>
+                                                                 </a>
+                                                             </li>
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                                     <i class="fa fa-google"></i>
+                                                                 </a>
+                                                             </li>
+                                                         </ul>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <!-- ./Team member -->
+                                 <!-- Team member -->
+                                 <div class="col-xs-12 col-sm-6 col-md-4">
+                                     <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                         <div class="mainflip">
+                                             <div class="frontside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center">
+                                                         <p><img class=" img-fluid" img src="{% static 'funo/img/faces/kelly.jpg' %}" alt="card image"></p>
+                                                         <h4 class="card-title">Kelly Lim</h4>
+                                                         <p class="card-text">UI/UX expertise/Programmer</p>
+                                                         
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             <div class="backside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center mt-4">
+                                                        
+                                                         <p class="card-text">My life quote:
+                                                             <b> "The greatest successec come from having the freedom to fail."</b></p>
+                                                         <ul class="list-inline">
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com/kEllYBLUESKY">
+                                                                     <i class="fa fa-facebook"></i>
+                                                                 </a>
+                                                             </li>
+                                                            
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                                     <i class="fa fa-google"></i>
+                                                                 </a>
+                                                             </li>
+                                                         </ul>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <!-- ./Team member -->
+                                 <!-- Team member -->
+                                 <div class="col-xs-12 col-sm-6 col-md-4">
+                                     <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                         <div class="mainflip">
+                                             <div class="frontside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center">
+                                                         <p><img class=" img-fluid" src="{% static 'funo/img/faces/trixie.jpg' %}" alt="card image"></p>
+                                                         <h4 class="card-title">Liew Xin Yu</h4>
+                                                         <p class="card-text">Graphic Designer/Programmer</p>
+                                                         </div>
+                                                 </div>
+                                             </div>
+                                             <div class="backside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center mt-4">
+                                                      
+                                                         <p class="card-text"><b>"Don't think about your errors or failure; otherwise you will never do a thing."</b></p>
+                                                         <ul class="list-inline">
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com/trixiee1207">
+                                                                     <i class="fa fa-facebook"></i>
+                                                                 </a>
+                                                             </li>
+                                                             
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                                     <i class="fa fa-google"></i>
+                                                                 </a>
+                                                             </li>
+                                                         </ul>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <!-- ./Team member -->
+                                 <!-- Team member -->
+                                 <div class="col-xs-12 col-sm-6 col-md-4">
+                                     <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                         <div class="mainflip">
+                                             <div class="frontside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center">
+                                                         <p><img class=" img-fluid" img src="{% static 'funo/img/faces/nicole.jpg' %}" alt="card image"></p>
+                                                         <h4 class="card-title">Nicole Chung</h4>
+                                                         <p class="card-text">Marketers/Programmer</p>
+                                                         
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             <div class="backside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center mt-4">
+                                                         
+                                                         <p class="card-text"><b>"Never let small minds convince you that your dreams are too big"</b></p>
+                                                         <ul class="list-inline">
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com/nicole.chung.90260">
+                                                                     <i class="fa fa-facebook"></i>
+                                                                 </a>
+                                                             </li>
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                                     <i class="fa fa-google"></i>
+                                                                 </a>
+                                                             </li>
+                                                         </ul>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <!-- ./Team member -->
+                                 <!-- Team member -->
+                                 <div class="col-xs-12 col-sm-6 col-md-4">
+                                     <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                         <div class="mainflip">
+                                             <div class="frontside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center">
+                                                         <p><img src="{% static 'funo/img/green_logo.png' %}" class="card-img" alt="..." style="background-color:white"></p>
+                                                         <h4 class="card-title">Join Us</h4>
+                                                         <p class="card-text">We're always looking for talented designers, developers & project managers.</p>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             <div class="backside">
+                                                 <div class="card">
+                                                     <div class="card-body text-center mt-4">
+                                                         <h4 class="card-title">Why join us?</h4>
+                                                         <p class="card-text" style="font-size:x-small;">We are a global, innovative agtech company that builds digital agricultural solutions for farmers of all scales, sourcing industry, governments, NGOs and other stakeholders interested in improving agricultural production.
+                                                            Our path is challenging but our mission is clear. If you are ready to work hard, support your team and if you have passion for your job - join us and make a global impact.  </p>
+                                                         <ul class="list-inline">
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                                     <i class="fa fa-facebook"></i>
+                                                                 </a>
+                                                             </li>
+                                                             <li class="list-inline-item">
+                                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                                     <i class="fa fa-google"></i>
+                                                                 </a>
+                                                             </li>
+                                                         </ul>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <!-- ./Team member -->
+                     
+                             </div>
+                         </div>
+                     </section>
+                     <!-- Team -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+               </div>
+                
+            </div>        
+        </div>
+    </div>
+    </div>
+        {% include 'funo/footer.html' %}
+
+
+{% endblock %}

@@ -1,0 +1,290 @@
+{% extends 'funo/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    {% include 'funo/graph.html'%}
+  
+    <div class="wrapper">
+       
+        <div class="sidebar" style="background:url({% static 'funo/img/bg-01.jpg' %});">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+        
+        Tip 2: you can also add an image using data-image tag
+        -->
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="/" class="simple-text">
+                        <img src="{% static 'funo/img/white_logo.png' %}" style="width:90px;">
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'function' %}">
+                            <i class="nc-icon nc-tv-2"></i>
+                            <p>Home</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'dashboard' %}">
+                            <i class="nc-icon nc-chart-bar-32"></i>
+                            <p>Forecast</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'user' %}">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'aboutus' %}">
+                            <i class="nc-icon nc-grid-45"></i>
+                            <p>About Us</p>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a class="nav-link" href="{% url 'support' %}">
+                            <i class="nc-icon nc-atom"></i>
+                            <p>Support</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'usermanual' %}">
+                            <i class="nc-icon nc-bulb-63"></i>
+                            <p>User Manual</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{%url 'subs'%}">
+                            <i class="nc-icon nc-email-85"></i>
+                            <p>Subscription</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+       
+        <div class="main-panel">
+
+         {% include 'funo/navbar.html' with page=page %}
+
+         <div class="content">
+            <a class="weatherwidget-io" href="https://forecast7.com/en/4d21101d98/malaysia/" data-label_1="MALAYSIA" data-label_2="WEATHER" data-font="Trebuchet MS" data-icons="Climacons Animated" data-theme="pure" >MALAYSIA WEATHER</a>
+            <script>
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+            </script>   
+</br>
+<div class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="aboutbanner" style="background:url('/static/funo/img/hope2.jpg'); background-position: bottom right;">
+                <h1 style="color:white; text-shadow: 5px 5px 6px #000000; text-align:center;">Discover the Commodities Prices Forecast</h4>
+                <b><i><h5 style="color:white; font-weight:400; text-shadow: 3px 3px 6px #000000; text-align: center;">Weekly report on commodity price trends and forecasts.
+                </h4></i></b>
+            </div>
+            <div class="card-body">
+                <div class="container-fluid">
+                <form method='GET'>
+                    <div class= "row">
+                        <div class="col-md-12">
+                            <h5><b>Forecast Selection</b></h5>
+                            <div class="nav-item dropdown">
+                                        <select class="nav-link dropdown-toggle form-control" style="width:120;"id="DropdownSearch" data-toggle="dropdown" aria-haspopup="true">
+                                            
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <option class="dropdown-item"  name="option"  value="">-- Select States --</option>
+                                            <option class="dropdown-item"  name="option"  data-toggle="tooltip" value="Selangor">Selangor</option>
+                                            <option class="dropdown-item"  name="option" data-toggle="tooltip" title="Premium APF only" value="more"disabled>Johor</option>
+                                            <option class="dropdown-item"  name="option"  data-toggle="tooltip" title="Premium APF only" value="more"disabled>Penang</option>
+                                            <option class="dropdown-item"  name="option"  data-toggle="tooltip" title="Premium APF only" value="more"disabled>Kuala Lumpur</option>
+                                            <option class="dropdown-item"  name="option"  data-toggle="tooltip" title="Premium APF only" value="more"disabled>Sabah</option>
+                                            <option class="dropdown-item"  name="option" data-toggle="tooltip" title="Premium APF only" value="more"disabled>--More--</option>
+
+
+                                        </div></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                           
+                            
+                        <div class="col-md-3">
+                           
+                            <div class="nav-item dropdown" >
+                                        <select class="nav-link dropdown-toggle form-control" name="commodity" id="DropdownSearch" data-toggle="dropdown" aria-haspopup="true" >
+                                            
+                                        
+                                        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink">
+                                            <option class="dropdown-item" data-live-search="true" name="option"  value="">--Select Commodity--</option>
+                                            
+                                            <optgroup label="Vegetables">
+                                                <option class="dropdown-item" data-tokens="water spinach"  name="option"  value="kangkung">Water Spinach</option>
+                                                <option class="dropdown-item" data-tokens="choysum" name="option"  value="sawiHijau">Choy Sum</option>
+                                                <option class="dropdown-item"  name="option" data-toggle="tooltip" title="Premium APF only" value="LongBean"disabled>Long Beans</option>
+                                                <option class="dropdown-item"  name="option" data-toggle="tooltip" title="Premium APF only" value="more"disabled>--More--</option>
+                                            </optgroup>
+                                            
+                                            <optgroup label="Fruits">
+                                                <option class="dropdown-item" name="option"  value="tomato">Tomato</option>
+                                                <option class="dropdown-item" name="option"  value="chilli">Red Chilli</option>
+                                                <option class="dropdown-item" name="option"  value="coconut">Coconut</option>
+                                                <option class="dropdown-item"  name="option" data-toggle="tooltip" title="Premium APF only" value="Durian"disabled>Durian</option>
+                                                <option class="dropdown-item"  name="option" data-toggle="tooltip" title="Premium APF only" value="More"disabled>--More--</option>
+                                            </optgroup>
+
+                                            <optgroup label="Poultry">
+                                                <option class="dropdown-item"  name="option" value="chicken">Chicken</option>
+                                                <option class="dropdown-item" name="option"  value="eggA">Egg (Grade A)</option>
+                                                <option class="dropdown-item" name="option"  value="eggB">Egg (Grade B)</option>
+                                                <option class="dropdown-item" name="option"  value="eggC">Egg (Grade C)</option>
+                                                <option class="dropdown-item"  name="option" data-toggle="tooltip" title="Premium APF only" value="Omegaegg"disabled>Omega Egg</optio>
+                                                
+                                            </optgroup>
+                                           
+                                        </div></select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                           
+                            <div class="nav-item dropdown">
+                                        <select class="nav-link dropdown-toggle form-control"name="duration" id="DropdownSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <option class="dropdown-item"  name="option"  value="">--Select Duration--</option>
+                                            <option class="dropdown-item"  name="option"  value="sixmonth">6 Months</option>
+                                            <option class="dropdown-item"  name="option"  value="oneyear">1 Year</option>
+                                            <option class="dropdown-item"  name="option"  value="threeyear">3 Year</option>
+                                            <option class="dropdown-item"  name="option"  value="fiveyear">5 Year</option>
+                                            <option class="dropdown-item"  name="option"  value="tenyear">10 Year</option>
+                                            <option class="dropdown-item"  name="option" data-toggle="tooltip" title="Premium APF only" value="more"disabled>--More--</option>
+
+
+                                        </div></select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                  
+                            <div class="nav-item dropdown">
+                                    <select class="nav-link dropdown-toggle form-control"name="datatype" id="DropdownSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <option class="dropdown-item"  name="option"  value="">--Output Type--</option>
+                                            <option class="dropdown-item"  name="option"  value="pastdata">Past Data</option>
+                                            <option class="dropdown-item"  name="option"  value="forecast3month">Forecast Data (3 Months)</option>
+                                            <option class="dropdown-item"  name="option"  value="forecast6month">Forecast Data (6 Months)</option>
+                                            <option class="dropdown-item"  name="option"  value="forecast1year">Forecast Data (1 Year)</option>
+                                            <option class="dropdown-item"  name="option" data-toggle="tooltip" title="Premium APF only" value="5years"disabled>Forecast Data (5 Years)</option>
+                                            <option class="dropdown-item"  name="option" data-toggle="tooltip" title="Premium APF only"  value="more"disabled>--More--</option>
+                                            
+                                        </div></select>
+                            </div>                        
+                        </div>
+
+                         <div class="col-md-3">
+                         
+                            <div class="nav-item dropdown" >
+                                    <select class="nav-link dropdown-toggle form-control"name="multivariate" id="DropdownSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <option class="dropdown-item"  name="option"  value="">--Forecast Model Type--</option>
+                                            <option class="dropdown-item"  name="option"  value="False">Univariate</option>
+                                            <option class="dropdown-item"  name="option"  value="True">Multivariate</option>
+                                        </div></select>
+                            </div>                        
+                        </div>
+                            
+                        
+                            <div class="col-md-12">
+                                <button class="nav-link nav-item"  id="submitbutton" type="submit"><i class="nc-icon nc-zoom-split"></i>&nbsp; &nbsp; Search</button>
+                            </div>
+                        </div>
+                    </div> 
+                
+                </form>
+                </div>
+
+                   
+
+                    <div class="container-fluid card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                            <div>
+                                            <h2 id = "commodityItem" style="font-weight: 400;"></h2>
+                                            <div id = "current_price"></div>
+                                            <div id = "nextweek_price"></div>
+                                            </div>
+                            </div>
+                           
+                        </div>
+
+                        <div class="card" style="padding: 40px; height: 100%;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id='loader'>
+                                        <div class="loader" style="margin:auto;"></div>
+                                    </div> 
+                                    <canvas id="myChart" style="display:block; height: 266px; width: 532px;"></canvas>
+                                </div>
+                            </div>
+                          
+                         
+                        </div>
+                      
+                        <div id = "information"></div>
+                        
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                    <h4><i>Recent Price and Price Change</i></h4>
+                            </div>
+                        </div>
+
+                        <div class="card" style="padding: 40px; height: 100%;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                        <div id="tableItem" style="margin:auto;"></div>          
+                            </div>
+                            <div class="col-md-12" id ="downloadLink"></div>
+                        </div>
+                        </div>
+                        
+                        
+                   
+              
+
+  
+  
+  
+  
+  
+                    
+             
+</div>
+                     
+                 
+                 
+           </div>
+           </div>
+           </div>
+           </div>
+                        
+         
+             
+            
+               
+                
+          
+       
+               {% include 'funo/chatbox.html' %}
+                {% include 'funo/footer.html' %}
+
+            </div>
+
+        </div>
+
+{% endblock %}

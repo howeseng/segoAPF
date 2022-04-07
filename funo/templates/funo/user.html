@@ -1,0 +1,205 @@
+{% extends 'funo/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="wrapper">
+        
+        <div class="sidebar" style="background:url({% static 'funo/img/bg-01.jpg' %});">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+        
+        Tip 2: you can also add an image using data-image tag
+        -->
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="/" class="simple-text">
+                        <img src="{% static 'funo/img/white_logo.png' %}" style="width:90px;">
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'function' %}">
+                        <i class="nc-icon nc-tv-2"></i>
+                          <p>Home</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="nav-link" href="{% url 'dashboard' %}">
+                          <i class="nc-icon nc-chart-bar-32"></i>
+                          <p>Forecast</p>
+                      </a>
+                  </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'user' %}">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'aboutus' %}">
+                            <i class="nc-icon nc-grid-45"></i>
+                            <p>About Us</p>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a class="nav-link" href="{% url 'support' %}">
+                            <i class="nc-icon nc-atom"></i>
+                            <p>Support</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'usermanual' %}">
+                            <i class="nc-icon nc-bulb-63"></i>
+                            <p>User Manual</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{%url 'subs'%}">
+                            <i class="nc-icon nc-email-85"></i>
+                            <p>Subscription</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            
+            {% include 'funo/navbar.html' %}
+
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                
+                                <div class="card-header">
+                                    <h4 class="card-title">Edit Profile</h4>
+                                </div>
+                                <div class="card-body contact-form">
+                                 
+                                    <form method="POST">
+                                    {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-md-4 pr-1">
+                                                <div class="styled-input wide">
+                                                    <label>Username</label>
+                                                     <input type="text" disabled="" value={{name}}>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 px-1">
+                                                <div class="styled-input wide">
+                                                    <label>Company</label>
+                                                    {{form.company}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 pl-1">
+                                                <div class="styled-input wide">
+                                                    <label for="exampleInputEmail1">Email address</label>
+                                                    {{form.email}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 pr-1">
+                                                <div class="styled-input wide">
+                                                    <label>First Name</label>
+                                                    {{form.first_name}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 pl-1">
+                                                <div class="styled-input wide">
+                                                    <label>Last Name</label>
+                                                    {{form.last_name}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="styled-input wide">
+                                                    <label>Address</label>
+                                                    {{form.address}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 pr-1">
+                                                <div class="styled-input wide">
+                                                    <label>City</label>
+                                                    {{form.city}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 px-1">
+                                                <div class="styled-input wide">
+                                                    <label>Country</label>
+                                                    {{form.country}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 pl-1">
+                                                <div class="styled-input wide">
+                                                    <label>Postal Code</label>
+                                                   {{form.postalcode}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                                        
+                                        <div class="clearfix"></div>{% for message in messages %}
+                                    <p id="messages" class="message-out">{{message}}</p>
+                                {% endfor %}
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-user">
+                                <div class="card-image">
+                                    <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <div class="author">
+                                        <a href="#">
+                                            <img class="avatar border-gray" src="{% static 'funo/img/faces/defaultuser.jpg' %}" alt="...">
+                                            <h5 class="title">{{name}}</h5>
+                                        </a>
+                                        <p class="description">
+                                            New User
+                                        </p>
+                                    </div>
+                                    <p class="description text-center">
+                                    
+                                       - Current Subscription Plan -
+                                        <br>14 Days Free Trial
+                                    </p>
+                                </div>
+                                <hr>
+                                <div class="button-container mr-auto ml-auto">
+                                    <button href="#" class="btn btn-simple btn-link btn-icon">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </button>
+                                    <button href="#" class="btn btn-simple btn-link btn-icon">
+                                        <i class="fa fa-twitter"></i>
+                                    </button>
+                                    <button href="#" class="btn btn-simple btn-link btn-icon">
+                                        <i class="fa fa-google-plus-square"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              
+            {% include 'funo/chatbox.html' %}
+
+            {% include 'funo/footer.html' %}
+
+        </div>
+    </div>
+
+{% endblock %}

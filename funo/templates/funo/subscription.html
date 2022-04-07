@@ -1,0 +1,432 @@
+{% extends 'funo/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="wrapper">
+     
+        <div class="sidebar" style="background:url({% static 'funo/img/bg-01.jpg' %});">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+        
+        Tip 2: you can also add an image using data-image tag
+        -->
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="/" class="simple-text">
+                        <img src="{% static 'funo/img/white_logo.png' %}" style="width:90px;">
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'function' %}">
+                        <i class="nc-icon nc-tv-2"></i>
+                          <p>Home</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="nav-link" href="{% url 'dashboard' %}">
+                          <i class="nc-icon nc-chart-bar-32"></i>
+                          <p>Forecast</p>
+                      </a>
+                  </li>
+                
+                    <li>
+                        <a class="nav-link" href="{% url 'user' %}">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'aboutus' %}">
+                            <i class="nc-icon nc-grid-45"></i>
+                            <p>About Us</p>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a class="nav-link" href="{% url 'support' %}">
+                            <i class="nc-icon nc-atom"></i>
+                            <p>Support</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'usermanual' %}">
+                            <i class="nc-icon nc-bulb-63"></i>
+                            <p>User Manual</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active"> 
+                        <a class="nav-link" href="{%url 'subs'%}">
+                            <i class="nc-icon nc-email-85"></i>
+                            <p>Subscription</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      
+        <div class="main-panel">
+            
+            {% include 'funo/navbar.html' %}
+            <h2 style="text-align:center;">Flexible Plans & Pricing</h2>
+            <h5 style="text-align:center;">Choose your plan now! </h5>
+            <div class="content">
+                
+                <div class="container-fluid">
+             <div class="row"> 
+                <div class="col-md-3">
+                    <div class="card align" style="padding: 20px;">
+                        <h4 style="font-weight:400;">Free trial</h4>
+                        <p><i>14 Days</i></p>
+                        <h3 style="text-align:center;"><span class="text-md font-weight-bold mr-2">$</span>0</h3>
+                        <div class="nav-item dropdown" style="padding:10px; font-size:13px;">
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="font-size:13px;">
+                    
+                                </div></br>
+                        </div>
+                        
+                    </br></br>
+                                
+                          
+                                <ul class="checkedlist">
+                                    <li>Predict limited locally commodities prices</li>
+                                    <li>Graph showing forecasted commodities</li>
+                                    <li>Market trends and prices updated weekly</li>
+                                    <li>Extract forecast commodities price data</li>
+                                    <li>4 supporting features for forecast accuracy</li>
+                                    <li>Live chat support</li>
+                                    <li>Agriculture News  </li>
+                                    <li>Locally farmers/suppliers directory</li>
+                                </ul>
+                                <button type="submit" class="btn btn-info btn-fill pull-right buttonalign" style="background-color: #000000; border-color: #000000;"><i class="nc-icon nc-check-2"></i>&nbsp Subscribed</button>
+                        </div> </div>
+                    
+                    
+                        <div class="col-md-3">
+                    
+                            <div class="card align" style="padding: 20px;">
+                                <h4 style="font-weight:400;">Premium<small><i class="fa fa-thumbs-o-up" style="color:rgb(36, 143, 59);"></i></small></h4>
+                                <p><i>Starting at:</i></p>
+                                <h3 style="text-align:center;"><span class="text-md font-weight-bold mr-2">$</span>65</h3>
+                                <div class="nav-item dropdown" style="padding:10px; font-size:13px;">
+                                        <a class="nav-link dropdown-toggle" href="http://example.com" id="DropdownSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="no-icon">Billing plan</span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="font-size:13px;">
+                                            <a class="dropdown-item" href="#">Annual plan, paid monthly</a>
+                                            <a class="dropdown-item" href="#">Annual plan, prepaid</a>
+                                        </div></br>
+                                </div>
+                                
+                          
+                                <ul class="checkedlist">
+                                    <li>Predict 10 locally commodities price</li>
+                                    <li>Unlimited access farmers/suppliers directory</li>
+                                    <li>6 supporting features for forecast accuracy</li>
+                                    <li>Geo-referenced Decision Support System </li>
+                                    <li>Agriculture World News Updated Daily  </li>
+                                    <li>Market trading price updated daily</li>
+                                    <li>Predict commodities prices by identifying zones</li>
+                            
+                                </ul>
+                                <button type="submit" class="btn btn-info btn-fill pull-right buttonalign" data-toggle="modal" data-target="#centralModal">Subscribe Now</button>
+                            </div>
+                        </div> 
+
+                        <div class="col-md-3">
+                    
+                            <div class="card align" style="padding: 20px;">
+                                <h4 style="font-weight:400;">Professional</h4>
+                                <p><i>Starting at:</i></p>
+                                <h3 style="text-align:center;"><span class="text-md font-weight-bold mr-2">$</span>100</h3>
+                                <div class="nav-item dropdown" style="padding:10px; font-size:13px;">
+                                        <a class="nav-link dropdown-toggle" href="http://example.com" id="DropdownSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="no-icon">Billing plan</span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="font-size:13px;">
+                                            <a class="dropdown-item" href="#">Annual plan, paid monthly</a>
+                                            <a class="dropdown-item" href="#">Annual plan, prepaid</a>
+                                        </div></br>
+                                </div>
+                                
+                          
+                                <ul class="checkedlist">
+                                    <li>Unlimited commodities selection</li>
+                                    <li>9 supporting features for forecast accuracy</li>
+                                    <li>14 days weather forecast</li>
+                                    <li>Acess all historical data </li>
+                                    <li>Free API access key</li>
+                                    <li>24/7 email support</li>
+                                    <li>Machinery & IOT integration</li>
+                                    <li>Install into your PC/LAPTOP</li>
+                                    <li>Social media integradetion</li>
+                                </ul>
+                                <button type="submit" class="btn btn-info btn-fill pull-right buttonalign" data-toggle="modal" data-target="#centralModal">Subscribe Now</button>
+                            </div>
+                        </div> 
+                        <div class="col-md-3">
+                        <div class="card align" style="padding: 20px;">
+                            <h4 style="font-weight:400;">Enterprise</h4>
+                            <p><i</i></p>
+                        </br>
+                            <h3 style="text-align:center;"><span class="text-md font-weight-bold mr-2"></span>Contact Us</h3>
+                            <div class="nav-item dropdown" style="padding:10px; font-size:13px;">
+                            </br></br>
+                            </div>
+                        </br>
+                      
+                            <ul class="checkedlist">
+                                <li>Dedicated guidance & support</li>
+                                <li>Dedicated Private Cloud</li>
+                                <li>Features Customization</li>
+                                <li>Dark theme UI</li>
+                                <li>Locally/World forecasting prices features</li>
+                                <li>Real-time cloud diagnostics</li>
+                                <li>Company-Branded User Interface</li>
+                            </ul>
+                            <p style="font-size:80%;"><i>Get in touch with our Sales team and let them provide you a quote.</i></p>
+                                <div class="text-center">
+                                <a href="{% url 'support' %}"><button type="submit" class="btn btn-info btn-fill btn-block buttonalign"  data-toggle="modal" >Schedule a demo</button>
+                                </a></div></br>
+                        </div>
+                    </div> 
+
+
+                        
+                    </div>
+                </div>  
+            </br>
+
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    <h2 id="faq" class="text-center">Frequently Asked Questions</h2>
+                </br>
+                <div class="card" style="padding:20px;">
+                <div class="container">
+                     <h3><b>Billing Information</b></h3>
+                        <div id="accordion">
+                            
+                            <div class="card" style="background-color:#11ffee00; border-color:#11ffee00;">
+                              <div class="card-header" id="headingOne" style="background-color:#11ffee00; border-color:#11ffee00;">
+                        
+                                  <button class="buttonfnq"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <small><i class="fa fa-chevron-right"></i></small> How can I enable free trial?
+                                  </button>
+                                
+                              </div>
+                          
+                              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="cardfnq" >
+                                    Customer can activate the free trial by subscibing the "14-days free trial" at subscription page.
+                                </div>
+                              </div>
+                              </div>
+                        
+                            <div class="card" style="background-color:#11ffee00; border-color:#11ffee00;">
+                              <div class="card-header" id="headingTwo" style="background-color:#11ffee00; border-color:#11ffee00;">
+                              
+                                  <button class="buttonfnq" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <small><i class="fa fa-chevron-right"></i></small>Will I be charged during my free trial?
+                                  </button>
+                            
+                              </div>
+                              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="cardfnq">
+                                    No. Customer won't be charged during the 14-days free trial.
+                                    Customer can cancel anytime before the free trial ends to avoid being charged.
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="card" style="background-color:#11ffee00; border-color:#11ffee00;">
+                              <div class="card-header" id="headingThree" style="background-color:#11ffee00; border-color:#11ffee00;">
+                            
+                                  <button class="buttonfnq" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <small><i class="fa fa-chevron-right"></i></small> What happens after the 14-days free trial expired?
+                                  </button>
+                               
+                              </div>
+                              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="cardfnq">
+                                  If the customer do not cancel before the 14-days free trial period, it will automactically charged for subscription.
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="card" style="background-color:#11ffee00; border-color:#11ffee00;">
+                                <div class="card-header" id="headingfour" style="background-color:#11ffee00; border-color:#11ffee00;">
+                               
+                                    <button class="buttonfnq" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                                        <small><i class="fa fa-chevron-right"></i></small> Are there any discount?
+                                    </button>
+                                
+                                </div>
+                                <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
+                                    <div class="cardfnq">
+                                    As customers may see from the subscribe form, using of special coupons for discount is possible.
+                                    Time after time we grant coupons to our regular customers (read newsletters), provide promo codes during events and distribute coupons to our partners.
+                                </div>
+                              </div>
+                              </div>
+                        
+                              <div class="card" style="background-color:#11ffee00; border-color:#11ffee00;">
+                                <div class="card-header" id="headingfive" style="background-color:#11ffee00; border-color:#11ffee00;">
+                       
+                                    <button class="buttonfnq" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                                        <small><i class="fa fa-chevron-right"></i></small> Can I migrate from one subscription to another?
+                                    </button>
+                                 
+                                </div>
+                                <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordion">
+                                    <div class="cardfnq">
+                                    Yes. One of the greatest features of APF license server is the ability to change subscription plans. 
+                                    ow it is as simple as that.
+                                    The flow is: Profile-Update subscription-Choose a plan. Please contact us if you have any questions or require supports.
+                                  </div>
+                                </div>
+                              </div>
+                            
+                              <div class="card" style="background-color:#11ffee00; border-color:#11ffee00;">
+                                <div class="card-header" id="headingsix" style="background-color:#11ffee00; border-color:#11ffee00;">
+                             
+                                    <button class="buttonfnq" data-toggle="collapse" data-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                                        <small><i class="fa fa-chevron-right"></i></small>When I cancel the subscription, I loose my credits?
+                                    </button>
+                         
+                                </div>
+                                <div id="collapsesix" class="collapse" aria-labelledby="headingsix" data-parent="#accordion">
+                                    <div class="cardfnq">
+                                    Customers may manage their subscription plans: update or cancel them. 
+                                    Once the subscription is deleted before expiration, stripe will keep the balance.
+                                    After a certain time period (about an hour) positive amount due with the remain credits will appear in billing section.
+                                    This sum is deducted from total fee whenever particular customer purchase a new plan or donated to the charity.
+                                </div>
+                              </div>
+                            </div>
+                           
+                            <h3><b>Support</b></h3></div>
+                              <div class="card" style="background-color:#11ffee00; border-color:#11ffee00;">
+                                <div class="card-header" id="headingseven"style="background-color:#11ffee00; border-color:#11ffee00;">
+                          
+                                    <button class="buttonfnq" data-toggle="collapse" data-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+                                       <small><i class="fa fa-chevron-right"></i></small>   What support do you have?
+                                    </button>
+                                
+                                </div>
+                                <div id="collapseseven" class="collapse" aria-labelledby="headingseven" data-parent="#accordion">
+                                    <div class="cardfnq">
+                                    We provide support bundles which contain server issues and application development tips. 
+                                    Please review APF professional support plans.
+                            
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card" style="background-color:#11ffee00; border-color:#11ffee00;">
+                                <div class="card-header" id="headinglapan" style="background-color:#11ffee00; border-color:#11ffee00;">
+                              
+                                    <button class="buttonfnq" data-toggle="collapse" data-target="#collapselapan" aria-expanded="false" aria-controls="collapselapan">
+                                        <small><i class="fa fa-chevron-right"></i></small>  Refund and Delivery Policy  
+                                    </button>
+                           
+                                </div>
+                                <div id="collapselapan" class="collapse" aria-labelledby="headinglapan" data-parent="#accordion">
+                                    <div class="cardfnq">
+                                <b>Refund Policy</b>
+                          <p>The Processing fee is non-refundable, regardless of any circumstances.
+                             Customers may manage their subscription plans: update or cancel them. Once the subscription is deleted before expiration, stripe will keep the balance. After a certain time period (about an hour) positive amount due with the remain credits will appear in billing section. 
+                             This sum is deducted from total fee whenever particular customer purchase a new plan or choose to donate the charity.</p> </br>
+                          
+                             <b>Delivery Policy</b>
+                             <p>For the 14-days free trial and professional, the software is only available to access online.
+                               Software Installation on PC is available for premium and enterprise customer. 
+                               In order to activate the software you will need to obtain the license key. Instruction how to obtain and use the license key guide would send to your registered email. 
+                               Please contact us if you have any questions or require support.</p>
+                               </div>
+                               </div>
+                               </div>
+                               </div>
+                            </div>
+                               </div>
+                         
+                         
+
+
+
+                          
+
+                {% include 'funo/chatbox.html' %}
+
+            </div>
+            
+            <!--Modal-->
+           
+            <!-- Central Modal Small -->
+            <div class="modal fade" id="centralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+
+              <!-- Change class .modal-sm to change the size of the modal -->
+              <div class="modal-dialog modal-lg" role="document">
+
+
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="modal-title w-100" id="myModalLabel">Credit Card Checkout</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                        <div class="container-fluid px-1 px-md-1 px-lg-2 py-4 mx-auto">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-7 border-line px-5 checkout-field">
+                                                <div class="form-group">
+                                                    <p class="text-muted text-sm mb-0">Name on the card</p> <input type="text" name="name" placeholder="Name" size="15">
+                                                </div>
+                                                <div class="form-group">
+                                                    <p class="text-muted text-sm mb-0">Card Number</p>
+                                                    <div class="row px-3"> <input type="text" name="card-num" placeholder="0000 0000 0000 0000" size="18" id="cr_no" minlength="19" maxlength="19">
+                                                        <i class="fa fa-cc-visa fa-2x"></i>
+                                                        <p style="font-size: 14px; padding: 8px; color:transparent">&nbsp; / &nbsp;</p>
+                                                        <i class="fa fa-cc-mastercard fa-2x"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p class="text-muted text-sm mb-0">Expiry date</p> <input type="text" name="exp" placeholder="MM/YY" size="6" id="exp" minlength="5" maxlength="5">
+                                                </div>
+                                                <div class="form-group">
+                                                    <p class="text-muted text-sm mb-0">CVV/CVC</p> <input type="password" name="cvv" placeholder="000" size="1" minlength="3" maxlength="3">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-sm-5 text-sm-center justify-content-center pt-4 pb-4"> <small class="text-sm text-muted">Order number</small>
+                                                <h5 class="mb-5">12345678</h5> <small class="text-sm text-muted">Payment amount</small>
+                                                <div class="row px-3 justify-content-sm-center">
+                                                    <h2 class=""><span class="text-md font-weight-bold mr-2">$</span><span class="text-dark"></span></h2>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                </div>
+                        </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-info btn-fill pull-right" style="margin:auto;">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Central Modal Small -->
+           
+           
+           
+            <!-- Modal -->
+    
+        </div>
+        {% include 'funo/footer.html' %}
+
+    </div>
+
+{% endblock %}

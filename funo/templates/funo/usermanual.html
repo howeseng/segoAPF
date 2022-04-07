@@ -1,0 +1,124 @@
+{% extends 'funo/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="wrapper">
+       
+        <div class="sidebar" style="background:url({% static 'funo/img/bg-01.jpg' %});">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+        
+        Tip 2: you can also add an image using data-image tag
+        -->
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="/" class="simple-text">
+                         <img src="{% static 'funo/img/white_logo.png' %}" style="width:90px;">
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'function' %}">
+                        <i class="nc-icon nc-tv-2"></i>
+                          <p>Home</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="nav-link" href="{% url 'function' %}">
+                          <i class="nc-icon nc-chart-bar-32"></i>
+                          <p>Forecast</p>
+                      </a>
+                  </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'user' %}">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'aboutus' %}">
+                            <i class="nc-icon nc-grid-45"></i>
+                            <p>About Us</p>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a class="nav-link" href="{% url 'support' %}">
+                            <i class="nc-icon nc-atom"></i>
+                            <p>Support</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'usermanual' %}">
+                            <i class="nc-icon nc-bulb-63"></i>
+                            <p>User Manual</p>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a class="nav-link" href="{%url 'subs'%}">
+                            <i class="nc-icon nc-email-85"></i>
+                            <p>Subscription</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+           
+            {% include 'funo/navbar.html' %}
+           
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="aboutbanner" style="background:url('/static/funo/img/usermanual.png'); background-position: 0.005cm;  background-size:100%;">
+                            <h1 style="color:white; text-shadow: 5px 5px 6px #000000;">User Manual Instruction</h4>
+                            <b><i><h4 style="color:white; font-weight:400; text-shadow: 3px 3px 6px #000000;">How to use our software- APF 
+                            </h4></i></b>
+                        </div>
+                       
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <h2 class="section-title text-center">APF</h2>
+                              <br>
+                                
+                                <div class="row text-center chefs">
+                                    <div class="col-sm-6">
+                                        <div class="col-wrapper">
+                                            <div align="center" class="embed-responsive embed-responsive-16by9">
+                                              
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-IS8Cuwvft4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            
+                                            </div>
+                                            <h3>How to use our software</h3>
+                                            <p>User Manual Guide</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="col-wrapper">
+                                             <div align="center" class="embed-responsive embed-responsive-16by9">
+                                              
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xucWeVTC8vo?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtube-embed.com" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                               
+                                            </div>
+                                            <h3>Why APF?</h3>
+                                            <p>Meet Selva! </p>
+                                        </div>
+                                    </div>
+                         
+                            <!-- /.container --> 
+                      
+                              </div>
+                            </div>
+           </div></div>
+           </div>
+                    <!--  End Modal -->
+        </div>
+        {% include 'funo/footer.html' %}
+
+    </div>
+
+{% endblock%}

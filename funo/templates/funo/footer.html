@@ -1,0 +1,42 @@
+{% load static %}
+
+<footer class="footer">
+    <div class="container-fluid">
+        <nav>
+            <ul class="footer-menu">
+                <li>
+                    <a href="{% url 'function' %}">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'aboutus' %}">
+                        About Us
+                    </a>
+                </li>
+                <li>
+                    <a href="{%url 'support'%}">
+                        Support
+                    </a>
+                </li>
+                <li>
+                    <a href="{%url 'usermanual'%}">
+                        User Manual
+                    </a>
+                </li>
+                <li>
+                    <a href="{%url 'subs'%}">
+                        Subrcribe 
+                    </a>
+                </li>
+            </ul>
+            <p class="copyright text-center">
+                ©
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                <a href="{% url 'aboutus' %}">Argriculture Price Forecast - APF</a>
+            </p>
+        </nav>
+    </div>
+</footer>

@@ -1,0 +1,467 @@
+{% extends 'funo/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    {% include 'funo/graph.html'%}
+  
+    <div class="wrapper">
+       
+        <div class="sidebar" style="background:url({% static 'funo/img/bg-01.jpg' %});">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+        
+        Tip 2: you can also add an image using data-image tag
+        -->
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="/" class="simple-text">
+                      <img src="{% static 'funo/img/white_logo.png' %}" style="width:90px;">
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'function' %}">
+                            <i class="nc-icon nc-tv-2"></i>
+                            <p>Home</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'dashboard' %}">
+                            <i class="nc-icon nc-chart-bar-32"></i>
+                            <p>Forecast</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'user' %}">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'aboutus' %}">
+                            <i class="nc-icon nc-grid-45"></i>
+                            <p>About Us</p>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a class="nav-link" href="{% url 'support' %}">
+                            <i class="nc-icon nc-atom"></i>
+                            <p>Support</p>
+                        </a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="{% url 'usermanual' %}">
+                        <i class="nc-icon nc-bulb-63"></i>
+                          <p>User Manual</p>
+                      </a>
+                  </li>
+                    <li>
+                        <a class="nav-link" href="{%url 'subs'%}">
+                            <i class="nc-icon nc-email-85"></i>
+                            <p>Subscription</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+       
+        <div class="main-panel">
+
+         {% include 'funo/navbar.html' with page=page %}
+
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="aboutbanner" style="background:url('/static/funo/img/supplier.png');  background-position: 0.005cm;  background-size:100%; ">
+                          <h1 style="color:white; text-shadow: 5px 5px 6px #000000; text-align:center;">Suppliers Discovery</h4>
+                            <b><i><h5 style="color:white; font-weight:400; text-shadow: 3px 3px 6px #000000; text-align: center;">Find Your Perfect Product and Supplier in Minutes!
+                            </i></b></h5>
+                        </div>
+            <div class="content">
+            
+            </br>
+            
+            
+
+<!--Nav--> <div class="container-fluid">
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-link">
+      <a class="nav" href="{% url 'function' %}">Overview </a>
+    </li>
+    <li class="nav-link ">
+      <a class="nav" data-toggle="modal" data-target="#exampleModal">Explore Commodity<img src="https://img.icons8.com/material/20/000000/barley.png"/></a>
+      </li>
+      <li class="nav-link">
+        <a class="nav" href="{% url 'news' %}">News <img src="https://img.icons8.com/windows/20/000000/rss.png"/></a></a>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Agriculture Directory<img src="https://img.icons8.com/windows/20/000000/address-book-2.png"/></a>
+        <div class="dropdown-menu">
+        <a class="dropdown-item" href="{%url 'farmer' %}">Farmers Directory </a> 
+        <a class="dropdown-item active" href="{%url 'supplier' %}">Suppliers Directory </a>
+        
+        </div>
+        </li>
+        </li>
+     
+  </span>
+</ul>
+  
+</div>
+  <!--news--> 
+  <div class="box card" style="margin: 20px;">
+    <div class="container">
+     	<div class="row">
+            <div class="container">
+
+            <h3><img src="https://img.icons8.com/windows/38/000000/supplier.png"/> Suppliers Directory</h3>
+            <p>Select by category: </p>
+            <div class="table responsibe" style="border-color:#fff;" >
+              <div class="tab-button-outer" style="border-color:#fff;" >
+                <ul id="tab-button">
+                  <li><a href="#tab01">Fertilizer Suppliers</a></li>
+                  <li><a href="#tab02">Seeds Suppliers</a></li>
+                  <li><a href="#tab03">Pesticide Suppliers</a></li>
+            
+                </ul>
+              </div>
+              <div class="tab-select-outer">
+                <select id="tab-select">
+                  <option value="#tab01">Fertilizer Suppliers</option>
+                  <option value="#tab02">Seed Suppliers</option>
+                  <option value="#tab03">Pesticide Suppliers</option>
+                  
+                </select>
+              </div>
+            
+              <div id="tab01" class="tab-contents" >
+               
+                <div class="card-deck">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <img src="{% static 'funo/img/company/eureka.jpg' %}"   style="margin-top: 60px;" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h4><b>Eureka Synergy Sdn Bhd</b></h4>
+                        <p class="card-text"> 
+                         <b> Company type(s):</b>
+                          Agent, Developer, Distributor, Exporter, Importer, Manufacturer, Trader</p>
+                        <p class="card-text"> <b>Agriculture Supplies: </b>Fertilizers, Horticulture Supplies</p>
+                        <a href="https://www.eureka-synergy.com/index.php/about"><button type="submit" class="btn btn-info btn-fill" style="margin-bottom: 0em;">Contact Us</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <img src="{% static 'funo/img/company/vtron.jpg' %}"  style="margin-top: 60px;" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h4><b>Vtron Technology Sdn Bhd</b></h4>
+                          <p class="card-text"> 
+                           <b> Company type(s):</b>
+                           Exporter, Manufacturer</p><br>
+                          <p class="card-text"> <b>Agriculture Supplies: </b>Fertilizers, Horticulture Supplies</p>
+                          <a href="http://malaysiayp.com/item/vtron-technology-sdn-bhd-279336/"><button type="submit" class="btn btn-info btn-fill" style="margin-bottom: 0em;">Contact Us</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-deck">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <img src="{% static 'funo/img/company/ai.jpg' %}"   style="margin-top: 60px;" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h4><b>A&i Trading And Consulting Sdn Bhd</b></h4>
+                        <p class="card-text"> 
+                         <b> Company type(s):</b>
+                          Distributor, Manufacturer</p>
+                        <p class="card-text"> <b>Agriculture Supplies: </b>Fertilizers, Horticulture Supplies</p>
+                        <a href="https://www.facebook.com/pages/AI-Trading-and-Consulting-Sdn-Bhd/694887573904098"><button type="submit" class="btn btn-info btn-fill" style="margin-bottom: 0em;">Contact Us</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <img src="{% static 'funo/img/company/pksj.jpg' %}"  style="margin-top: 60px;" class="card-img" alt="">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h4><b>PKSJ Fertilizers Sdn Bhd</b></h4><br>
+                        <p class="card-text"> 
+                         <b> Company type(s):</b>
+                         Distributor, Exporter, Manufacturer, Wholesaler</p>
+                        <p class="card-text"> <b>Agriculture Supplies: </b>Organic Fertilizers, Horticulture Supplies</p>
+                        <a href="https://www.agriculture1.com/agriculture-suppliers/a-globalagri-enginee"><button type="submit" class="btn btn-info btn-fill" style="margin-bottom: 0em;">Contact Us</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-deck">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <img src="{% static 'funo/img/company/3r.png' %}"  style="margin-top: 60px;" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h4><b>3R GLOBAL SUPPLY CHAIN</b></h4><br><br>
+                        <p class="card-text"> 
+                         <b> Company type(s):</b>
+                           Distributor, Manufacturer</p>
+                           <p class="card-text"> <b>Agriculture Supplies: </b>Fertilizers, Horticulture Supplies</p>
+                           <a href="http://3rglobalsupply.com/"><button type="submit" class="btn btn-info btn-fill" style="margin-bottom: 0em;">Contact Us</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <img src="{% static 'funo/img/company/real.jpg' %}"  style="margin-top: 60px;" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h4><b>RealStrong Malaysia Fertilizer (ALL COSMOS KL OFFICE)</b></h4>
+                        <p class="card-text"> 
+                         <b> Company type(s):</b>
+                         Developer, Exporter, Importer, Manufacturer, Trader</p>
+                        <p class="card-text"> <b>Agriculture Supplies: </b>Fertilizers, Horticulture Supplies</p>
+                        <a href="https://www.agriculture1.com/agriculture-suppliers/a-vasanthi-trading"><button type="submit" class="btn btn-info btn-fill" style="margin-bottom: 0em;">Contact Us</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="{%url 'subs'%}"><button type="submit" class="btn btn-info btn-block" style="margin-bottom: 0em;">Go premium to unlimited access</button></a>
+            </div>
+              <div id="tab02" class="tab-contents">
+               
+                <div class="card-deck">
+                  <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="{% static 'funo/img/company/seed1.jpg' %}"  style="margin-top: 60px;" class="card-img" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h4><b>SOON HUAT SEEDS</b></h4>
+                          <p class="card-text"> 
+                           <b> Company type(s):</b>
+                           Developer, Exporter, Importer, Manufacturer, Trader</p>
+                          <p class="card-text"> <b>Agriculture Supplies: </b>Vegetable seeds, fruit seeds, flower seeds, herb seeds & microgreens seeds.</p>
+                          <a href="https://soonhuatseeds.com/"><button type="submit" class="btn btn-info btn-fill" style="margin-bottom: 0em;">Contact Us</button></a>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="{% static 'funo/img/company/seed2.jpg' %}"  style="margin-top: 60px;" class="card-img" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h4><b>ALPHINEOIL SBN BHD</b></h4>
+                          <p class="card-text"> 
+                           <b> Company type(s):</b>
+                           Distributor, Exporter, Importer, Importer, Manufacturer</p>
+                          <p class="card-text"> <b>Agriculture Supplies: </b>Oilseeds, Seeds, Horticulture Supplies</p></br>
+                          <a href="https://www.agriculture1.com/agriculture-suppliers/alphineoil-3"><button type="submit" class="btn btn-info btn-fill" style="margin-bottom: 0em;">Contact Us</button></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-deck">
+                  <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="" class="card-img" alt="">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h4><b>Gotham Besi Enterprise</b></h4>
+                          <p class="card-text"> <br>
+                           <b> Company type(s):</b>
+                           Distributor, Exporter, Importer</p>
+                             <p class="card-text"> <b>Agriculture Supplies: </b>Seeds, Horticulture Supplies</p>
+                             <a href="https://www.agriculture1.com/agriculture-suppliers/gotham-besi-enterpri2"><button type="submit" class="btn btn-info btn-fill" style="margin-bottom: 0em;">Contact Us</button></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="{% static 'funo/img/company/seed3.png' %}"  style="margin-top: 60px;" class="card-img" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h4><b>Eusoof Mohamed Bros Sdn Bhd</b></h4>
+                          <p class="card-text"> 
+                           <b> Company type(s):</b>
+                           Developer, Exporter, Importer, Manufacturer, Trader</p>
+                          <p class="card-text"> <b>Agriculture Supplies: </b>Oilseeds, Seeds, Horticulture Supplies</p>
+                          <a href="https://www.agriculture1.com/agriculture-suppliers/embsb2"><button type="submit" class="btn btn-info btn-fill" style="margin-bottom: 0em;">Contact Us</button></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <a href="{%url 'subs'%}"><button type="submit" class="btn btn-info btn-block" style="margin-bottom: 0em;">Go premium to unlimited access</button></a>
+            </div>
+              <div id="tab03" class="tab-contents">
+
+                <div class="card-deck">
+                  <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="{% static 'funo/img/company/baba.png' %}"  style="margin-top: 60px;" class="card-img" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h4><b>Kean Beng Lee Industries Sdn Bhd</b></h4>
+                        <p class="card-text"> 
+                         <b> Company type(s):</b>
+                         Distributor, Exporter, Importer, Manufacturer, Trader, Webshop, Wholesaler</p>
+                        <p class="card-text"> <b>Agriculture Supplies: </b>Trainings, Consulting, Fertilizers, Horticulture Supplies, Pesticides, Vegetables, Garden Pesticides</p>
+                        <a href="https://www.baba.com.my/"><button type="submit" class="btn btn-info btn-fill" style="margin-bottom: 0em;">Contact Us</button></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 
+ 
+                </div>
+                <a href="{%url 'subs'%}"><button type="submit" class="btn btn-info btn-block" style="margin-bottom: 0em;">Go premium to unlimited access</button></a>
+              </div>
+              
+            </div>
+            
+            <script>$(function() {
+              var $tabButtonItem = $('#tab-button li'),
+                  $tabSelect = $('#tab-select'),
+                  $tabContents = $('.tab-contents'),
+                  activeClass = 'is-active';
+            
+              $tabButtonItem.first().addClass(activeClass);
+              $tabContents.not(':first').hide();
+            
+              $tabButtonItem.find('a').on('click', function(e) {
+                var target = $(this).attr('href');
+            
+                $tabButtonItem.removeClass(activeClass);
+                $(this).parent().addClass(activeClass);
+                $tabSelect.val(target);
+                $tabContents.hide();
+                $(target).show();
+                e.preventDefault();
+              });
+            
+              $tabSelect.on('change', function() {
+                var target = $(this).val(),
+                    targetSelectNum = $(this).prop('selectedIndex');
+            
+                $tabButtonItem.removeClass(activeClass);
+                $tabButtonItem.eq(targetSelectNum).addClass(activeClass);
+                $tabContents.hide();
+                $(target).show();
+              });
+            });</script>
+
+
+                
+      </div>
+      </div>
+      </div>
+      </div>
+    
+         <!--modal commodity-->
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document" style="max-width: 600px;">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><b>Select commodity:</b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <!---start-->
+                        <div class="row">
+                            {% for comm in comms %}
+                          <div class="col-md-4">
+                            <div class="card">
+                              <div class="card-content row valign-wrapper">
+                                <a href="{{ comm.get_absolute_url }}" style="border: #fff;"><button type="submit"style="border: seagreen;">
+                                <div class="col">
+                                <img src="{{ comm.icon.url }}"><span class="card-title" >{{ comm.name }}</span>
+                            
+                                 <div class="col">
+                                <span class="card-title" value="commodity"></span>
+                              </div>
+                              </div>
+                           </div>
+                
+                          </div>
+                        </button></a>
+                      
+                    
+                       
+                         </div>
+                         {% endfor %}
+                         <div class="col-md-12">
+                            <a href="{%url 'subs'%}"><button type="submit" class="btn btn-info btn-fill btn-block" style="margin-bottom: 0em;">Go premium to unlock more commodities!</button></a>
+                        </div>
+                         </div>
+                         </div>
+                     </div>
+  
+
+</div>
+</div>
+    
+       </div>
+
+</div>
+</div>
+</div>
+                  
+                
+                
+          
+
+
+
+
+                
+               {% include 'funo/chatbox.html' %}
+                {% include 'funo/footer.html' %}
+
+            </div>
+
+        </div>
+
+{% endblock %}
+    
+               

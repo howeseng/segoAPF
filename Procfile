@@ -1,0 +1,1 @@
+web: gunicorn segp3.wsgi --log-file -

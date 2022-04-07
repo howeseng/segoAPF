@@ -1,0 +1,146 @@
+{% extends 'funo/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="wrapper">
+       
+        <div class="sidebar" style="background:url({% static 'funo/img/bg-01.jpg' %});">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+        
+        Tip 2: you can also add an image using data-image tag
+        -->
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="/" class="simple-text">
+                         <img src="{% static 'funo/img/white_logo.png' %}" style="width:90px;">
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'function' %}">
+                        <i class="nc-icon nc-tv-2"></i>
+                          <p>Home</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="nav-link" href="{% url 'function' %}">
+                          <i class="nc-icon nc-chart-bar-32"></i>
+                          <p>Forecast</p>
+                      </a>
+                  </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'user' %}">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'aboutus' %}">
+                            <i class="nc-icon nc-grid-45"></i>
+                            <p>About Us</p>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'support' %}">
+                            <i class="nc-icon nc-atom"></i>
+                            <p>Support</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'usermanual' %}">
+                            <i class="nc-icon nc-bulb-63"></i>
+                            <p>User Manual</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{%url 'subs'%}">
+                            <i class="nc-icon nc-email-85"></i>
+                            <p>Subscription</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+           
+            {% include 'funo/navbar.html' %}
+           
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="aboutbanner" style="background:url('/static/funo/img/bg-02.jpg'); background-size:100%; background-repeat:no-repeat;">
+                            <h1 style="color:white; text-shadow: 5px 5px 6px #000000;">Contact Us.</h4>
+                            <b><i><h4 style="color:white; font-weight:400; text-shadow: 3px 3px 6px #000000;">Connect with Us for Support.
+                            </h4></i></b>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST">
+                                {% csrf_token %}
+                                 <div class="row contact-form">
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="styled-input wide">
+                                                        {{form.name}}
+                                                        <label>Name</label> 
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="styled-input">
+                                                        {{form.email}}
+                                                        <label>Email</label> 
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="styled-input">
+                                                        {{form.phone}}
+                                                        <label>Phone Number</label> 
+                                                    </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="styled-input wide">
+                                                        {{form.message}}
+                                                        <label>Message</label>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="row text-center">
+                                                <div class="col-md-12">
+                                                    <button type="submit" class="btn btn-info btn-fill">Send Message</button>
+                                                </div>
+
+                                                {% for message in messages %}
+                                                 <p id="messages" class="message-out">{{message}}</p>
+                                                {% endfor %}
+                                        </div>
+                                    </div>
+                            </form>
+                            <div class="col-md-6 col-sm-12" style="padding:40px;">
+                                <div class="map-responsive">
+                                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15938.193309118753!2d101.874613!3d2.945194!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xca94557719d2191!2sUniversity%20of%20Nottingham%20Malaysia!5e0!3m2!1sen!2smy!4v1584901222772!5m2!1sen!2smy" width="400" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>                                </div>
+                                </div>
+                            </div>
+                        
+               </div>
+                    <!--  End Modal -->
+                </div>
+            </div>
+            
+
+        </div>
+        {% include 'funo/footer.html' %}
+
+    </div>
+
+{% endblock%}
